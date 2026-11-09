@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <title>Add new Product</title>
+    <link rel="stylesheet" href="product_form_styles.css">
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Add a product</h1>
+        <form id="form">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label"><b>Product name</b></label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text">The name of the product, for example, Nesquik</div>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label"><b>Flavor</b></label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text">Products with the same name might come in different flavors</div>
+            </div>
+            <select class="form-select" aria-label="Default select example">
+                <option selected><b>Product Type</b></option>
+                <option value="1">Chocolate</option>
+                <option value="2">Candy</option>
+                <option value="3">Three</option>
+            </select>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label"><b>Brand name</b></label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text">The name of the brand, the product might have more than one</div>
+            </div>
+            <div class="button-container" id="brand-button-container">
+                <button class="btn btn-primary add-brand" id="add-brand-button" type="submit" title="add another brand">+</button>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-danger btn-lg" id="submit-button">Submit</button>
+        </form>
+    </div>
+    
+    
+        
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+        <!-- Continuar haciendo este formulario-->
+    <script src="product_form_script.js"></script>     
+</body>
+</html>

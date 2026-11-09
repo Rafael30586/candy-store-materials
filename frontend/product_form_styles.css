@@ -1,0 +1,57 @@
+:root{
+    --character-color: #FFB7A3;
+    --character-color-2: #FEFFF2;
+    --input-color: #6B6B6B;
+    --character-color-3: #EB1515;
+}
+
+.container{
+    max-width: 400px;
+    margin-top: 50px;
+}
+
+h1{
+    color: var(--character-color-3);
+    text-align: center;
+}
+
+form{
+    background-color: var(--bs-secondary-color);
+    padding: 20px;
+    border-radius: 5%;
+}
+
+.form-label b{
+    color: #FEFFF2;
+}
+
+.form-control{
+    background-color: var(--input-color);
+    color: var(--character-color-2);
+}
+
+.form-control:focus{
+    background-color: var(--input-color);
+    color: var(--character-color-2)
+}
+
+.form-select{
+    margin-bottom: 30px;
+}
+
+.form-text{
+    color: var(--character-color);
+}
+
+option, option b{
+    background-color: var(--input-color);
+    color: var(--character-color-2);
+}
+
+.button-container{
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+
