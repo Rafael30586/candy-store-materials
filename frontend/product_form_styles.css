@@ -53,5 +53,17 @@ option, option b{
     justify-content: flex-end;
 }
 
+.brand-field-wrapper{
+    display: flex;
+    flex-direction: row;
+    row-gap: 20px;
+    justify-content: space-around;
+    align-items:center;
+}
+
+.remove-brand-field-button{
+    max-height: 40px;
+}
+
 
 
