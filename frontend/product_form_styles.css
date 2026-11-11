@@ -11,59 +11,10 @@
 }
 
 h1{
-    color: var(--character-color-3);
     text-align: center;
 }
 
-form{
-    background-color: var(--bs-secondary-color);
-    padding: 20px;
-    border-radius: 5%;
+.select-container{
+    margin-bottom: 20px;
 }
-
-.form-label b{
-    color: #FEFFF2;
-}
-
-.form-control{
-    background-color: var(--input-color);
-    color: var(--character-color-2);
-}
-
-.form-control:focus{
-    background-color: var(--input-color);
-    color: var(--character-color-2)
-}
-
-.form-select{
-    margin-bottom: 30px;
-}
-
-.form-text{
-    color: var(--character-color);
-}
-
-option, option b{
-    background-color: var(--input-color);
-    color: var(--character-color-2);
-}
-
-.button-container{
-    display: flex;
-    justify-content: flex-end;
-}
-
-.brand-field-wrapper{
-    display: flex;
-    flex-direction: row;
-    row-gap: 20px;
-    justify-content: space-around;
-    align-items:center;
-}
-
-.remove-brand-field-button{
-    max-height: 40px;
-}
-
-
 

@@ -13,48 +13,55 @@
 
     <div class="container">
         <h1>Add a product</h1>
-        <form id="form">
+        <form>
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label"><b>Product name</b></label>
+                <label for="exampleInputEmail1" class="form-label">Product name</label>
                 <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                <div id="emailHelp" class="form-text">The name of the product, for example, Nesquik</div>
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label"><b>Flavor</b></label>
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                <div id="emailHelp" class="form-text">Products with the same name might come in different flavors</div>
-            </div>
-            <select class="form-select" aria-label="Default select example">
-                <option selected><b>Product Type</b></option>
-                <option value="1">Chocolate</option>
-                <option value="2">Candy</option>
-                <option value="3">Three</option>
-            </select>
-
-            <div class="brand-field-wrapper">
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label"><b>Brand name</b></label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                    <div id="emailHelp" class="form-text">The name of the brand, the product might have more than one
-                    </div>
-                </div>
+                <div  class="form-text">The name of the product.</div>
             </div>
 
-            <div class="button-container" id="brand-button-container">
-                <button class="btn btn-primary add-brand" id="add-brand-button" type="submit"
-                    title="add another brand">+</button>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Flavor</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <div class="form-text">Products with the same name come in different flavors.</div>
             </div>
-            <br>
-            <button type="submit" class="btn btn-danger btn-lg" id="submit-button">Submit</button>
+            <div class="select-container">
+                <select class="form-select" id="brand-select" aria-label="Default select example">
+                    <option selected>Brand</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+                <div class="form-text">If the brand you're looking for isn't on the list, you can add it manually</div>
+            
+            </div>
+            
+            <div class="select-container">
+                <select class="form-select" id="product-type-select" aria-label="Default select example">
+                    <option selected>Product Type</option>
+                    <option value="1">Alfajor</option>
+                    <option value="2">Caramelo</option>
+                    <option value="3">Chocolate</option>
+                </select>
+                <div class="form-text">If the type you're looking for isn't on the list, you can add it manually</div>
+            </div>
+            
+            <div class="select-container">
+                <select class="form-select" id="measurement-select" aria-label="Default select example">
+                    <option selected>Measurement</option>
+                    <option value="1">Units</option>
+                    <option value="2">Grams</option>
+                    <option value="3">Package</option>
+                </select>
+                <div class="form-text">This part of the form is about how you sell your product</div>
+            </div>
+            
+
+
+            <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
 
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
-    <!-- Continuar haciendo este formulario-->
     <script src="product_form_script.js"></script>
 </body>
 
