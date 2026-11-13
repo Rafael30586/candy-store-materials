@@ -13,20 +13,20 @@
 
     <div class="container">
         <h1>Add a product</h1>
-        <form>
+        <form id="form">
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Product name</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="name">
                 <div  class="form-text">The name of the product.</div>
             </div>
 
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Flavor</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="flavor">
                 <div class="form-text">Products with the same name come in different flavors.</div>
             </div>
             <div class="select-container">
-                <select class="form-select" id="brand-select" aria-label="Default select example">
+                <select class="form-select" id="brand-select" aria-label="Default select example" name="brand">
                     <option selected>Brand</option>
                     <option value="1">One</option>
                     <option value="2">Two</option>
@@ -37,7 +37,7 @@
             </div>
             
             <div class="select-container">
-                <select class="form-select" id="product-type-select" aria-label="Default select example">
+                <select class="form-select" id="product-type-select" aria-label="Default select example" name="type">
                     <option selected>Product Type</option>
                     <option value="1">Alfajor</option>
                     <option value="2">Caramelo</option>
@@ -47,11 +47,11 @@
             </div>
             
             <div class="select-container">
-                <select class="form-select" id="measurement-select" aria-label="Default select example">
+                <select class="form-select" id="measurement-select" aria-label="Default select example" name="measurement">
                     <option selected>Measurement</option>
-                    <option value="1">Units</option>
-                    <option value="2">Grams</option>
-                    <option value="3">Package</option>
+                    <option value="units">Units</option>
+                    <option value="grams">Grams</option>
+                    <option value="package">Package</option>
                 </select>
                 <div class="form-text">This part of the form is about how you sell your product</div>
             </div>

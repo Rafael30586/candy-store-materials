@@ -1,67 +1,62 @@
-const addProductButton = document.getElementById("add-brand")
-const form = document.getElementById("form")
-const submitButtom = document.getElementById("submit-button")
-const brandButtonContainer = document.getElementById("brand-button-container")
-const addBrandButton = document.getElementById("add-brand-button")
-let brandInputQuantity = 1
+const domainUrl = 'http://localhost:8080/candy-store-app'
 
-function removeBrandField(){
-    brandInputQuantity--
-    const fieldWrapperToRemove = document.getElementById("brand-field-wrapper-"+brandInputQuantity)
-    fieldWrapperToRemove?.remove()
+interface Brand {
+    id: number,
+    name: string
 }
 
-function addBrandField() {
+interface ProductType{
+    id: number,
+    name: string
+}
 
-    if (brandInputQuantity >= 3) {
-        return
+interface Product{
+    name: string,
+    flavor: string,
+    brandId: number,
+    typeId: number,
+    measurement: 'units' | 'grams' | 'package'
+}
+
+const form = document.getElementById('form') as HTMLFormElement
+
+async function getBrands(): Promise<Brand[]>{
+    const response = await fetch('/brands')
+
+    if(!response.ok){
+        throw new Error(`HTTP error: ${response.status}`)
     }
 
-    const wrapDiv = document.createElement("div")
-    const div = document.createElement("div")
-    const label = document.createElement("label")
-    const input = document.createElement("input")
-    const b = document.createElement("b")
-    b.textContent = "Other brand"
-    const removeBrandInputButton = document.createElement("button")
-    removeBrandInputButton.textContent = '-'
+    const brands = await response.json()
 
-    wrapDiv.setAttribute("class", "brand-field-wrapper")
-    wrapDiv.setAttribute("id","brand-field-wrapper-"+brandInputQuantity)
-    div.setAttribute("class", "mb-3")
-    label.setAttribute("class", "form-label")
-    input.setAttribute("type", "text")
-    input.setAttribute("class", "form-control")
-    removeBrandInputButton.setAttribute("class", "btn btn-secondary remove-brand-field-button")
-    removeBrandInputButton.setAttribute("title", "remove the brand field")
-    removeBrandInputButton.setAttribute("id","remove-brand-field-button")
-
-    removeBrandInputButton.addEventListener("click",(e)=>{
-        e.preventDefault()
-        removeBrandField()
-    })
-
-
-    label.appendChild(b)
-    div.appendChild(label)
-    div.appendChild(input)
-    wrapDiv.appendChild(div)
-    wrapDiv.appendChild(removeBrandInputButton)
-
-    //submitButtom?.remove() // parece que esto no sirve
-    // brandButtonContainer?.remove() // ni esto tampoco
-
-    form?.insertBefore(wrapDiv, brandButtonContainer)
-    brandInputQuantity++
-    // form?.appendChild(brandButtonContainer)
-    // averiguar si se puede hacer un app4end child en la posición que elijamos
-    // console.log(div)
-
+    return brands
 }
 
+async function getProductTypes(): Promise<ProductType[]>{
+    const response = await fetch('/product-types')
 
+    if(!response.ok){
+        throw new Error(`HTTP error: ${response.status}`)
+    }
 
-addBrandButton?.addEventListener("click", (e) => {
-    e.preventDefault()
-    addBrandField()
+    const productTypes = await response.json()
+
+    return productTypes
+}
+
+form?.addEventListener("submit", async(event)=>{
+    event.preventDefault()
+
+    const formData = new FormData(form)
+
+    const productInfo = Object.fromEntries(formData.entries())
+
+    console.log(productInfo)
+
+    await fetch(`${domainUrl}/NewProductServlet?name=${productInfo.name}&flavour=${productInfo.flavor}&brand-id=${productInfo.brand}&product-type-id=${productInfo.type}&measurement=${productInfo.measurement}`,
+        {
+            method: "POST"
+        }
+    )
+    
 })
