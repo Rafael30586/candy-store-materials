@@ -19,21 +19,23 @@ interface Product{
 }
 
 const form = document.getElementById('form') as HTMLFormElement
+const brandSelect = document.getElementById('brand-select')
+const productTypeSelect = document.getElementById('product-type-select')
 
 async function getBrands(): Promise<Brand[]>{
-    const response = await fetch('/brands')
+    const response = await fetch(`${domainUrl}/ShowBrandsServlet`)
 
     if(!response.ok){
         throw new Error(`HTTP error: ${response.status}`)
     }
 
-    const brands = await response.json()
+    const brands: Brand[] = await response.json()
 
     return brands
 }
 
 async function getProductTypes(): Promise<ProductType[]>{
-    const response = await fetch('/product-types')
+    const response = await fetch(`${domainUrl}/ShowProductTypesServlet`)
 
     if(!response.ok){
         throw new Error(`HTTP error: ${response.status}`)
@@ -43,6 +45,22 @@ async function getProductTypes(): Promise<ProductType[]>{
 
     return productTypes
 }
+
+async function showAllBrands(){
+    const allBrands = await getBrands()
+    let option: HTMLOptionElement
+    
+    for(let brand of allBrands){
+        option = document.createElement('option')
+        option.setAttribute('value',`${brand.id}`)
+        option.textContent = brand.name
+
+        brandSelect?.appendChild(option)
+    }
+
+}
+
+showAllBrands()
 
 form?.addEventListener("submit", async(event)=>{
     event.preventDefault()
@@ -60,3 +78,6 @@ form?.addEventListener("submit", async(event)=>{
     )
     
 })
+
+// Rellenar el Select de tipos de producto
+

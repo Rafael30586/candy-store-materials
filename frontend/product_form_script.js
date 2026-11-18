@@ -1,8 +1,10 @@
 "use strict";
 const domainUrl = 'http://localhost:8080/candy-store-app';
 const form = document.getElementById('form');
+const brandSelect = document.getElementById('brand-select');
+const productTypeSelect = document.getElementById('product-type-select');
 async function getBrands() {
-    const response = await fetch('/brands');
+    const response = await fetch(`${domainUrl}/ShowBrandsServlet`);
     if (!response.ok) {
         throw new Error(`HTTP error: ${response.status}`);
     }
@@ -10,13 +12,24 @@ async function getBrands() {
     return brands;
 }
 async function getProductTypes() {
-    const response = await fetch('/product-types');
+    const response = await fetch(`${domainUrl}/ShowProductTypesServlet`);
     if (!response.ok) {
         throw new Error(`HTTP error: ${response.status}`);
     }
     const productTypes = await response.json();
     return productTypes;
 }
+async function showAllBrands() {
+    const allBrands = await getBrands();
+    let option;
+    for (let brand of allBrands) {
+        option = document.createElement('option');
+        option.setAttribute('value', `${brand.id}`);
+        option.textContent = brand.name;
+        brandSelect?.appendChild(option);
+    }
+}
+showAllBrands();
 form?.addEventListener("submit", async (event) => {
     event.preventDefault();
     const formData = new FormData(form);
@@ -26,3 +39,4 @@ form?.addEventListener("submit", async (event) => {
         method: "POST"
     });
 });
+// Rellenar el Select de tipos de producto
