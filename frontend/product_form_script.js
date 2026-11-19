@@ -29,7 +29,18 @@ async function showAllBrands() {
         brandSelect?.appendChild(option);
     }
 }
+async function showAllProductTypes() {
+    const allProductTypes = await getProductTypes();
+    let option;
+    for (let type of allProductTypes) {
+        option = document.createElement('option');
+        option.setAttribute('value', `${type.id}`);
+        option.textContent = type.name;
+        productTypeSelect?.appendChild(option);
+    }
+}
 showAllBrands();
+showAllProductTypes();
 form?.addEventListener("submit", async (event) => {
     event.preventDefault();
     const formData = new FormData(form);

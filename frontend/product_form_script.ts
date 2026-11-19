@@ -41,7 +41,7 @@ async function getProductTypes(): Promise<ProductType[]>{
         throw new Error(`HTTP error: ${response.status}`)
     }
 
-    const productTypes = await response.json()
+    const productTypes: ProductType[] = await response.json()
 
     return productTypes
 }
@@ -60,7 +60,22 @@ async function showAllBrands(){
 
 }
 
+async function showAllProductTypes(){
+    const allProductTypes = await getProductTypes()
+
+    let option: HTMLOptionElement
+
+    for(let type of allProductTypes){
+        option = document.createElement('option')
+        option.setAttribute('value', `${type.id}`)
+        option.textContent = type.name
+
+        productTypeSelect?.appendChild(option)
+    }
+}
+
 showAllBrands()
+showAllProductTypes()
 
 form?.addEventListener("submit", async(event)=>{
     event.preventDefault()
