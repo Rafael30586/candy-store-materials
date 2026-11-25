@@ -10,7 +10,6 @@
 </head>
 
 <body>
-
     <div class="container">
         <h1>Add a product</h1>
         <form id="form">
@@ -27,31 +26,23 @@
             </div>
             <div class="select-container">
                 <select class="form-select" id="brand-select" aria-label="Default select example" name="brand">
-                    <option selected>Brand</option>
-                    <!--<option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>-->
                 </select>
                 <div class="form-text">If the brand you're looking for isn't on the list, you can add it manually</div>
-            
+                <a class="btn btn-secondary" href="brand_form.html" role="button">Add new brand to the list</a>
             </div>
             
             <div class="select-container">
                 <select class="form-select" id="product-type-select" aria-label="Default select example" name="type">
-                    <option selected>Product Type</option>
-                    <!--<option value="1">Alfajor</option>
-                    <option value="2">Caramelo</option>
-                    <option value="3">Chocolate</option>-->
                 </select>
                 <div class="form-text">If the type you're looking for isn't on the list, you can add it manually</div>
+                <a class="btn btn-secondary" href="product_type_form.html" role="button">Add new product type to the list</a>
             </div>
             
             <div class="select-container">
                 <select class="form-select" id="measurement-select" aria-label="Default select example" name="measurement">
-                    <option selected>Measurement</option>
                     <option value="units">Units</option>
                     <option value="grams">Grams</option>
-                    <option value="package">Packages</option>
+                    <option value="packages">Packages</option>
                 </select>
                 <div class="form-text">This part of the form is about how you sell your product</div>
             </div>

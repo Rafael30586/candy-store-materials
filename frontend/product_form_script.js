@@ -28,6 +28,14 @@ async function showAllBrands() {
         option.textContent = brand.name;
         brandSelect?.appendChild(option);
     }
+    /*
+        option = document.createElement('option')
+        const a = document.createElement('a')
+        a.textContent = 'Add new brand'
+        a.setAttribute('href','brand_form.html')
+        option.appendChild(a)
+        brandSelect?.appendChild(option)
+    */
 }
 async function showAllProductTypes() {
     const allProductTypes = await getProductTypes();
