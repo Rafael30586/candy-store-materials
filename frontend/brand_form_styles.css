@@ -1,0 +1,13 @@
+:root{
+    --form-border-color: #FFFFC2;
+}
+
+.container{
+    max-width: 400px;
+    margin-top: 50px;
+    border-style: groove;
+    border-color: var(--input-color);
+    padding: 10px;
+    border-color: var(--form-border-color);
+    border-radius: 1%;
+}
