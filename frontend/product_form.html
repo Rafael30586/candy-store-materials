@@ -13,32 +13,32 @@
     <div class="container">
         <h1>Add a product</h1>
         <form id="form">
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Product name</label>
+            <div class="mb-3 field-container odd-field-container">
+                <label for="exampleInputEmail1" class="form-label"><b>Product name</b></label>
                 <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="name">
                 <div  class="form-text">The name of the product.</div>
             </div>
 
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Flavor</label>
+            <div class="mb-3 field-container even-field-container">
+                <label for="exampleInputEmail1" class="form-label"><b>Flavor</b></label>
                 <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="flavor">
                 <div class="form-text">Products with the same name come in different flavors.</div>
             </div>
-            <div class="select-container">
+            <div class="select-container field-container odd-field-container">
                 <select class="form-select" id="brand-select" aria-label="Default select example" name="brand">
                 </select>
                 <div class="form-text">If the brand you're looking for isn't on the list, you can add it manually</div>
                 <a class="btn btn-secondary" href="brand_form.html" role="button">Add new brand to the list</a>
             </div>
             
-            <div class="select-container">
+            <div class="select-container field-container even-field-container">
                 <select class="form-select" id="product-type-select" aria-label="Default select example" name="type">
                 </select>
                 <div class="form-text">If the type you're looking for isn't on the list, you can add it manually</div>
                 <a class="btn btn-secondary" href="product_type_form.html" role="button">Add new product type to the list</a>
             </div>
             
-            <div class="select-container">
+            <div class="select-container field-container odd-field-container">
                 <select class="form-select" id="measurement-select" aria-label="Default select example" name="measurement">
                     <option value="units">Units</option>
                     <option value="grams">Grams</option>

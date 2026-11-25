@@ -3,11 +3,18 @@
     --character-color-2: #FEFFF2;
     --input-color: #6B6B6B;
     --character-color-3: #EB1515;
+    --odd-field-container-background: #FFFFC2;
+    --even-field-container-background: #E3E3AF;
 }
 
 .container{
     max-width: 400px;
     margin-top: 50px;
+    border-style: groove;
+    border-color: var(--input-color);
+    padding: 10px;
+    border-color: var(--odd-field-container-background);
+    border-radius: 1%;
 }
 
 h1{
@@ -17,4 +24,18 @@ h1{
 .select-container{
     margin-bottom: 20px;
 }
+
+.field-container{
+    padding: 10px;
+    border-radius: 3%;
+}
+
+.odd-field-container{
+    background-color: var(--odd-field-container-background);
+}
+
+.even-field-container{
+    background-color: var(--even-field-container-background);
+}
+
 
