@@ -1,4 +1,4 @@
-const domainUrl = 'http://localhost:8080/candy-store-app'
+import {FULL_APP_URL} from './variables.js'
 
 interface Brand {
     id: number,
@@ -23,7 +23,7 @@ const brandSelect = document.getElementById('brand-select')
 const productTypeSelect = document.getElementById('product-type-select')
 
 async function getBrands(): Promise<Brand[]>{
-    const response = await fetch(`${domainUrl}/ShowBrandsServlet`)
+    const response = await fetch(`${FULL_APP_URL}/ShowBrandsServlet`)
 
     if(!response.ok){
         throw new Error(`HTTP error: ${response.status}`)
@@ -35,7 +35,7 @@ async function getBrands(): Promise<Brand[]>{
 }
 
 async function getProductTypes(): Promise<ProductType[]>{
-    const response = await fetch(`${domainUrl}/ShowProductTypesServlet`)
+    const response = await fetch(`${FULL_APP_URL}/ShowProductTypesServlet`)
 
     if(!response.ok){
         throw new Error(`HTTP error: ${response.status}`)
@@ -93,7 +93,7 @@ form?.addEventListener("submit", async(event)=>{
 
     console.log(productInfo)
 
-    await fetch(`${domainUrl}/NewProductServlet?name=${productInfo.name}&flavour=${productInfo.flavor}&brand-id=${productInfo.brand}&product-type-id=${productInfo.type}&measurement=${productInfo.measurement}`,
+    await fetch(`${FULL_APP_URL}/NewProductServlet?name=${productInfo.name}&flavour=${productInfo.flavor}&brand-id=${productInfo.brand}&product-type-id=${productInfo.type}&measurement=${productInfo.measurement}`,
         {
             method: "POST"
         }
